@@ -14,7 +14,7 @@ def compare_chunks(text_chunk):
     final_prompt = prompt.format(piece=text_chunk, article=article_text)  # Formatting the prompt with the chunk and article texts
 
     llm_instance = LLM.create(provider=LLMProvider.OPENAI)  # Creating an instance of the language model
-    response = llm_instance.generate_text(final_prompt)  # Generating text/response from the LLM
+    response = llm_instance.generate_response(final_prompt)  # Generating text/response from the LLM
 
     response_data = json.loads(response)  # Parsing the response into a JSON object
 
